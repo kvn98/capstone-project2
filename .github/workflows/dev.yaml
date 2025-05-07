@@ -32,9 +32,9 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-to-ecr.outputs.registry }}
           REPOSITORY: cp2-githubactions
-          IMAGE_TAG: ${{ env.COMMIT_SHORT_SHA }}
+
         run: |
       docker build -t cp2-githubactions .
-      docker tag cp2-githubactions:latest $REGISTRY/$REPOSITORY:$IMAGE_TAG
+    
       docker tag cp2-githubactions:latest $REGISTRY/$REPOSITORY:dev-latest
       docker push --all-tags $REGISTRY/$REPOSITORY
