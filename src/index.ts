@@ -29,4 +29,4 @@ app.listen(PORT, async () => {
   await connectToDatabase();
 
   console.log(`Application started on URL ${HOST}:${PORT} 🎉`);
-});
+})
